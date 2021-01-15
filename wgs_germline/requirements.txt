@@ -1,0 +1,7 @@
+git+https://github.com/shahcompbio/pypeliner.git@v0.5.26
+git+https://github.com/shahcompbio/wgs.git@v0.1.15
+git+https://github.com/shahcompbio/biowrappers.git@v0.2.8
+git+https://github.com/shahcompbio/wgs_qc_utils.git@v0.0.5
+git+https://github.com/shahcompbio/classifycopynumber.git@v0.0.2
+git+https://github.com/amcpherson/wgs_analysis.git@v0.0.1
+pyvcf

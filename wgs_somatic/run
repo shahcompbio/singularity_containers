@@ -1,0 +1,5 @@
+docker image ls | awk '{print $3}'| while read x; do docker rmi $x -f; done
+
+docker build -t quay.io/wgspipeline/somatic_calling:v0.1.16 . --no-cache&& docker push quay.io/wgspipeline/somatic_calling:v0.1.16
+
+

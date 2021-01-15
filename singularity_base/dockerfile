@@ -1,0 +1,7 @@
+FROM continuumio/miniconda3
+
+ADD . /app
+
+RUN conda install --file  /app/requirements.yml
+
+

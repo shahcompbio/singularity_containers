@@ -1,0 +1,4 @@
+
+docker build -t quay.io/wgspipeline/germline_calling:v0.1.16 . --no-cache&& docker push quay.io/wgspipeline/germline_calling:v0.1.16
+
+

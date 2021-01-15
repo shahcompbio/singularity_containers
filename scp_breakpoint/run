@@ -1,0 +1,4 @@
+
+docker build -t quay.io/singlecellpipeline/breakpoint:v0.6.39 .&& docker push quay.io/singlecellpipeline/breakpoint:v0.6.39
+
+
