@@ -1,4 +1,4 @@
-FROM quay.io/wgspipeline/singularity_base:v0.0.1
+FROM quay.io/shahlab_singularity/singularity_base:v0.0.1
 
 ADD . /app
 

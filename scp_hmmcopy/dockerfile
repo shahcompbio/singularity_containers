@@ -1,0 +1,5 @@
+FROM continuumio/miniconda3:4.8.2
+
+RUN conda update -n base -c defaults conda -y   
+RUN conda install -c bioconda -c shahcompbio  single_cell_pipeline_hmmcopy
+RUN rm -rf /opt/conda/lib/python3.7/site-packages/pypeliner* && pip install git+https://github.com/shahcompbio/pypeliner.git@v0.5.26
