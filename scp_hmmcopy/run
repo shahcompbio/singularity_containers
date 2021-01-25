@@ -1,4 +1,4 @@
 
-docker build -t quay.io/shahlab_singularity/scp_hmmcopy:v0.6.39 .&& docker push quay.io/shahlab_singularity/scp_hmmcopy:v0.6.39
+docker build -t quay.io/shahlab_singularity/scp_hmmcopy:v0.6.41 .&& docker push quay.io/shahlab_singularity/scp_hmmcopy:v0.6.41
 
 
