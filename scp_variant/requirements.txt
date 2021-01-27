@@ -3,3 +3,4 @@ git+https://github.com/shahcompbio/single_cell_pipeline.git@v0.6.42
 git+https://github.com/shahcompbio/biowrappers.git@v0.2.8
 pyvcf
 intervaltree
+biopython
