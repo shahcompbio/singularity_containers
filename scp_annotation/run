@@ -1,0 +1,4 @@
+
+docker build -t quay.io/shahlab_singularity/scp_annotation:v0.6.41 . --no-cache&& docker push quay.io/shahlab_singularity/scp_annotation:v0.6.41
+
+

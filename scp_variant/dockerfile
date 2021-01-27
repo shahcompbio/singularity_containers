@@ -1,0 +1,44 @@
+FROM quay.io/shahlab_singularity/singularity_base:v0.0.1
+
+ADD . /app
+
+RUN rm -rf /opt/conda/lib/python3.7/site-packages/pypeliner*
+RUN pip install -r /app/requirements.txt
+
+
+RUN conda create --name museq python=2.7
+SHELL ["conda", "run", "-n", "museq", "/bin/bash", "-c"]
+RUN conda install -c conda-forge -c shahcompbio museq intervaltree museqportrait==0.99.13 -y
+
+ENV PATH="${PATH}:/opt/conda/envs/museq/bin:/opt/conda/envs/strelka/share/strelka-2.8.2-0/libexec/"
+
+
+# Install basic packages
+RUN apt-get update && apt-get install -y libltdl7 && rm -rf /var/lib/apt/lists/*
+RUN conda update -y conda
+RUN conda install -c bioconda vcftools tabix bcftools snpeff
+RUN conda install -c bioconda perl-vcftools-vcf==0.1.15
+RUN conda install -c aroth85 strelka==1.0.14
+RUN conda install -c conda-forge intervaltree
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# set env name
+ENV NAME vcftools
+
+# Run python when the container launches
+CMD ["vcftools"]
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# set env name
+ENV NAME strelka
+
+# Run python when the container launches
+CMD ["strelka"]
+
+
+# mutationseq - https://github.com/shahcompbio/singularity_containers/blob/master/wgs_somatic/dockerfile line 13-15, 24
+# vcf tools - https://github.com/shahcompbio/singlecellpipeline_docker_containers/blob/master/dockerfiles/vcftools/
+# strelka - https://github.com/shahcompbio/singlecellpipeline_docker_containers/blob/master/dockerfiles/strelka/dockerfile

@@ -1,0 +1,4 @@
+FROM continuumio/miniconda3:4.8.2
+
+RUN conda update -n base -c defaults conda -y   
+RUN conda install -c bioconda -c shahcompbio -c conda-forge  single_cell_pipeline_annotation=0.6.41
