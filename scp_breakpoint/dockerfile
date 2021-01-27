@@ -20,9 +20,7 @@ RUN conda install -c bioconda -c conda-forge samtools cryptography
 
 RUN conda create --name lumpy python=2.7
 SHELL ["conda", "run", "-n", "lumpy", "/bin/bash", "-c"]
-RUN conda install -c componc -c bioconda  lumpy-sv=0.2.12
-RUN conda install -c bioconda sambamba
-RUN echo "aliasawk=gawk" >> ~/.bashrc
-RUN cp /app/lumpy_extractSplitReads_BwaMem  /opt/conda/envs/lumpy/bin/lumpy_extractSplitReads_BwaMem
+RUN apt-get update && apt install autoconf make gcc zlib1g-dev  libcurl3-dev libssl-dev g++ -y && rm -rf /var/lib/apt/lists/*
+RUN git clone --recursive https://github.com/arq5x/lumpy-sv.git && cd ./lumpy-sv && make && cp bin/* /usr/local/bin/. && cp ./scripts/extractSplitReads_BwaMem /usr/local/bin/.
+RUN conda install -c bioconda samtools
 
-ENV PATH="${PATH}:/opt/conda/envs/lumpy/bin"
