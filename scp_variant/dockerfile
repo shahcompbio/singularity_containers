@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y libltdl7 && rm -rf /var/lib/apt/lists/*
 RUN conda update -y conda
 RUN conda install -c bioconda vcftools tabix bcftools snpeff
 RUN conda install -c bioconda perl-vcftools-vcf==0.1.15
+RUN pip install biopython
 
 # TODO: this might have to go in another env
 RUN conda install -c aroth85 strelka==1.0.14
