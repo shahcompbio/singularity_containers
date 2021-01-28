@@ -1,4 +1,4 @@
 
-docker build -t quay.io/shahlab_singularity/scp_breakpoint:v0.6.41 . --no-cache&& docker push quay.io/shahlab_singularity/scp_breakpoint:v0.6.41
+docker build -t quay.io/shahlab_singularity/scp_alignment:v0.6.42 . --no-cache&& docker push quay.io/shahlab_singularity/scp_alignment:v0.6.42
 
 
