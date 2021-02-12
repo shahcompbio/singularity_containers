@@ -19,7 +19,7 @@ ENV PATH="${PATH}:/opt/conda/envs/museq/bin"
 # Install basic packages
 RUN apt-get update && apt-get install -y libltdl7 && rm -rf /var/lib/apt/lists/*
 RUN conda update -y conda
-RUN conda install -c bioconda vcftools tabix bcftools snpeff
+RUN conda install -c bioconda vcftools tabix bcftools snpeff=4.3
 RUN conda install -c bioconda perl-vcftools-vcf==0.1.15
 RUN pip install bx-python==0.8.9
 
