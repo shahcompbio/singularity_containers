@@ -1,4 +1,5 @@
 FROM continuumio/miniconda3:4.8.2
 
+RUN apt-get update && apt-get install -y libltdl7 parallel && rm -rf /var/lib/apt/lists/*
 RUN conda update -n base -c defaults conda -y   
 RUN conda install -c bioconda -c shahcompbio  single_cell_pipeline_align=0.6.42
