@@ -1,4 +1,4 @@
 
-docker build -t quay.io/wgspipeline/breakpoint_calling:v0.1.16 .&& docker push quay.io/wgspipeline/breakpoint_calling:v0.1.16
+docker build -t quay.io/shahlab_singularity/wgs_breakpoint_calling:v0.1.16 .&& docker push quay.io/shahlab_singularity/wgs_breakpoint_calling:v0.1.16
 
 
